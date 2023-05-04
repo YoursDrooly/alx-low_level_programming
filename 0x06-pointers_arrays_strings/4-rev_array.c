@@ -7,14 +7,18 @@
  * Return: reversed array
  */
 
-void reverse_array(int *a. int n)
+void reverse_array(int *a, int n)
 {
-	int i, j, tmp;
+	int i;
+	int b;
 
-	for (i = 0; i < n--; i++)
+	i = 0;
+	while (i < n)
 	{
-		tmp = a[i];
-		a[i] = a[j];
-		a[j] = tmp;
+		n--;
+		b = a[i];
+		a[i] = a[n];
+		a[n] = b;
+		i++;
 	}
 }
