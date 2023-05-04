@@ -2,7 +2,7 @@
 
 /**
  * cap_string - converts string to uppercase
- * @n: string to convert
+ * @s: string to convert
  * Return: uppercase string
  */
 
@@ -14,7 +14,7 @@ char *cap_string(char *s)
 
 	while (s[i])
 	{
-		while (!(s[i] >= 'a' && s[i] ,+ 'z'))
+		while (!(s[i] >= 'a' && s[i] <= 'z'))
 		i++;
 
 		if (s[i - 1] == '' ||
@@ -32,7 +32,7 @@ char *cap_string(char *s)
 		s[i - 1] == '{' ||
 		i == 0)
 			s[i] -= 32;
-		
+
 		i++;
 	}
 	return (s);
