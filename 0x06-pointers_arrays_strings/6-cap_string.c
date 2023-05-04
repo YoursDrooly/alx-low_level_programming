@@ -1,40 +1,34 @@
 #include "main.h"
 
 /**
- * cap_string - converts string to uppercase
- * @s: string to convert
- * Return: uppercase string
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
+ *
+ * Return: the resulting string
  */
-
 char *cap_string(char *s)
 {
-	int i;
+	int i, j;
 
-	int = 0;
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
 
-	while (s[i])
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		while (!(s[i] >= 'a' && s[i] <= 'z'))
-		i++;
-
-		if (s[i - 1] == '' ||
-		s[i - 1] == '\t' ||
-		s[i - 1] == '\n' ||
-		s[i - 1] == ',' ||
-		s[i - 1] == '.' ||
-		s[i - 1] == ';' ||
-		s[i - 1] == '!' ||
-		s[i - 1] == '?' ||
-		s[i - 1] == '"' ||
-		s[i - 1] == '(' ||
-		s[i - 1] == ')' ||
-		s[i - 1] == '}' ||
-		s[i - 1] == '{' ||
-		i == 0)
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
 			s[i] -= 32;
 
-		i++;
+		for (j = 0; j < 13; j++)
+		{
+			if (s[i] == spe[j])
+			{
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
+			}
+		}
 	}
+
 	return (s);
 }
-
